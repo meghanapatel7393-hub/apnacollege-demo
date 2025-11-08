@@ -1,4 +1,4 @@
 # apnacollege-demo
 this is my first repository.
 <br>
-Auther - bhavesh shekhda
+Author - bhavesh shekhda
