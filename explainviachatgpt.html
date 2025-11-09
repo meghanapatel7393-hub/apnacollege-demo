@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    🧠 Part 1: What is Git and GitHub?
+
+    <p>| Term | Meaning |</p>
+    <p>
+      | ---------- |
+      ---------------------------------------------------------------------------------------------------------------------------------------------------
+      |
+    </p>
+    <p>
+      | **Git** | A **version control system** that tracks changes in your code.
+      You can go back to older versions, create branches, merge code, etc. |
+    </p>
+    <p>
+      | **GitHub** | A **cloud platform** to store and share your Git
+      repositories. It’s like Google Drive for code but with version control and
+      collaboration features. |
+    </p>
+
+    <br /><br />
+
+    <strong>Part 2: Setup Git on Your Computer</strong>
+    <p>
+      Step 1. Install Git <br /><br />
+      👉 Download from: https://git-scm.com/
+      <br /><br />
+      Follow installation defaults (Next → Next → Finish).
+      <br /><br />
+      🧾 Step 2. Verify Git
+      <br /><br />
+      Open VS Code → Terminal or Command Prompt and type:
+      <br /><br />
+      git --version
+      <br /><br />
+
+      ✅ If you see something like git version 2.46.0, it’s installed correctly.
+      <br /><br />
+      👤 Step 3: Configure Git (Your Identity)
+      <br /><br />
+      This tells Git who you are — important for commits.
+      <br /><br />
+      git config --global user.name "Your Name"
+      <br /><br />git config --global user.email "youremail@example.com"
+      <br /><br />
+
+      Check it with:
+      <br /><br />
+      git config --list
+    </p>
+    <br /><br />
+
+    <strong>Part 3: Create or Clone a Project</strong>
+    <p>
+      Option 1: Create a New Project <br /><br />mkdir myproject <br /><br />cd
+      myproject <br /><br />git init <br /><br />
+
+      🧩 Explanation:
+      <br /><br />
+      mkdir → make a folder
+      <br /><br />
+      cd → go into it
+      <br /><br />
+      git init → start a new git repository here (creates .git folder)
+      <br /><br />
+      Option 2: Clone an Existing GitHub Repo
+      <br /><br />
+      git clone https://github.com/username/repo-name.git
+      <br /><br />
+
+      🧩 Explanation:
+      <br /><br />
+      Copies the repo from GitHub to your local machine.
+    </p>
+    <br /><br />
+
+    <strong>Part 4: Basic Git Commands</strong>
+    <p>
+      <br /><br />
+      🧩 1. git status
+      <br /><br />
+      Shows what’s changed since your last commit.
+      <br /><br />
+      git status
+      <br /><br />
+      🧩 2. git add
+      <br /><br />
+      Tells Git which files you want to include in the next commit.
+      <br /><br />
+      <br /><br />git add filename.txt # add one file <br /><br />git add . #
+      add all changes <br /><br />
+      🧩 3. git commit
+      <br /><br />
+      Saves a “snapshot” of your code.
+      <br /><br />
+      git commit -m "Add homepage design"
+      <br /><br />
+      🧩 4. git log
+      <br /><br />
+      Shows history of commits.
+      <br /><br />
+      git log
+      <br /><br />
+
+      Press q to exit.
+      <br /><br />
+      🧩 5. git push
+      <br /><br />
+      Sends your commits to GitHub.
+      <br /><br />
+      git push origin main
+      <br /><br />
+
+      🧩 “origin” is your GitHub link name, “main” is your branch name.
+      <br /><br />
+      🧩 6. git pull
+      <br /><br />
+      Brings latest changes from GitHub to your local.
+      <br /><br />
+      git pull origin main
+      <br /><br />
+      🧩 7. git branch
+      <br /><br />
+      Used for creating or switching branches.
+      <br /><br />
+      git branch # list all branches git branch new-feature # create a branch<br /><br />
+      git checkout new-feature # switch to it<br /><br />
+      git checkout -b new-feature # create + switch<br /><br />
+
+      🧩 8. git merge<br /><br />
+
+      Combine changes from one branch into another.<br /><br />
+
+      git checkout main<br /><br />
+      git merge new-feature<br /><br />
+    </p>
+
+    <strong>Part 5: Connect Local Project to GitHub</strong>
+    <p>
+      <br /><br />
+      Step 1: Create a Repository on GitHub
+      <br /><br />
+      Go to https://github.com/new → name it → “Create Repository”.
+      <br /><br />
+      Step 2: Link it to your local project
+      <br /><br />
+      Copy the repo URL (like https://github.com/yourname/myproject.git) and
+      run:
+      <br /><br />
+      git remote add origin https://github.com/yourname/myproject.git
+      <br /><br />
+      git branch -M main<br /><br />
+      git push -u origin main<br /><br />
+
+      Now your local Git and GitHub are connected 🎉<br /><br />
+    </p>
+    <strong>Bonus: Undo Commands</strong>
+
+    <p>Action ---------- Command ---------- Meaning</p>
+    <p>Undo last add ---------- git reset filename ---------- Unstage file</p>
+    <p>
+      Undo last commit (keep changes) ---------- git reset --soft HEAD~1
+      ---------- Keep your work
+    </p>
+    <p>
+      Undo last commit (discard changes) ---------- git reset --hard HEAD~1
+      ---------- ⚠️ Deletes your last commit
+    </p>
+    <p>
+      See diff before commit ---------- git diff ---------- Shows line-by-line
+      changes
+    </p>
+
+    <strong>Part 7: Advanced (after youre comfortable)</strong>
+    <p>
+      <br /><br />
+      .gitignore → to ignore files like node_modules
+      <br /><br />
+      git stash → to save uncommitted work temporarily
+      <br /><br />
+      git rebase → to clean up commit history
+      <br /><br />
+      git tag → to mark versions (v1.0, v1.1, etc.)
+      <br /><br />
+    </p>
+  </body>
+</html>
